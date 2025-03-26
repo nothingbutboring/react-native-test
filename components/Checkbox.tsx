@@ -11,7 +11,7 @@ const CustomCheckbox = ({ checked }: Props) => {
       <Icon
         name={checked ? "check-box" : "check-box-outline-blank"}
         size={24}
-        color={checked ? "#6200EE" : "#999"}
+        color={checked ? "#612E3A" : "#EBD7B3"}
       />
     </View>
   );

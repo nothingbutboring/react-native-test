@@ -12,16 +12,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     shadowColor: "#000",
     shadowOffset: {
-      width: 0,
+      width: 1,
       height: 2,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
     elevation: 8,
-    paddingVertical: 24,
-    paddingHorizontal: 24,
+    paddingVertical: 16,
+    paddingHorizontal: 16,
     borderRadius: 8,
     alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#F7EFE1",
   },
   content: {
     flexDirection: "row",
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonText: {
-    color: "#000",
+    color: "#612E3A",
     fontSize: 16,
     marginRight: 8,
   },
@@ -43,13 +45,26 @@ interface Props {
   text: string;
   onPress: (event: GestureResponderEvent) => void;
   active?: boolean;
+  disabled?: boolean;
   icon?: React.ReactNode;
 }
 
-const QuizElement = ({ text, onPress, active = false, icon }: Props) => {
+const QuizElement = ({
+  text,
+  onPress,
+  active = false,
+  disabled = false,
+  icon,
+}: Props) => {
   return (
     <TouchableOpacity
-      style={{ ...styles.button, backgroundColor: active ? "yellow" : "#fff" }}
+      activeOpacity={0.8}
+      style={{
+        ...styles.button,
+        backgroundColor: active ? "#F3E7D1" : "#fff",
+        opacity: disabled ? 0.5 : 1,
+      }}
+      disabled={disabled}
       onPress={onPress}
     >
       <View style={styles.content}>

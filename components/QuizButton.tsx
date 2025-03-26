@@ -5,13 +5,15 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 interface Props {
   text: string;
+  disabled?: boolean;
   onPress: (event: GestureResponderEvent) => void;
 }
 
-const QuizButton = ({ text, onPress }: Props) => {
+const QuizButton = ({ text, disabled, onPress }: Props) => {
   return (
     <QuizElement
       text={text}
+      disabled={disabled ?? false}
       onPress={onPress}
       icon={<Icon name="navigate-next" size={20} color="#000" />}
     />
