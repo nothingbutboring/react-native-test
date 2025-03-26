@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  GestureResponderEvent,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { GestureResponderEvent, Text, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
